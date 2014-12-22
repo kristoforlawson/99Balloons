@@ -9,10 +9,33 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var balloonImage: UIImageView!
+    @IBOutlet weak var balloonLabel: UILabel!
 
+    var balloonNumber = 0
+    var currentIndex = 0
+    var myRedBalloon = RedBalloons()
+    
+//    var myBalloons:[RedBalloons] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.balloonLabel.text = "\(balloonNumber++) Red Balloons"
+        
+//      *** Idea I was playing with to assign balloons to an array
+//        var currentBalloon = RedBalloons()
+//
+//        
+//        for redBalloonNumber in 1...99 {
+//            
+//            myRedBalloon.balloonNumber = redBalloonNumber
+//            myRedBalloon.balloonImage = myRedBalloon.randomBalloon()
+//            
+//            self.myBalloons.append(myRedBalloon)
+// 
+//        }
+  
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +43,22 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func balloonNextButtonPressed(sender: UIBarButtonItem) {
+       
+        
+        do {
+            self.balloonLabel.text = "\(balloonNumber++) Red Balloons"
+        } while balloonNumber == currentIndex
+        
+        currentIndex = balloonNumber
+        
+        var currentBalloon = balloonImage.image
+
+        do {
+            self.balloonImage.image = myRedBalloon.randomBalloon()
+        } while currentBalloon == balloonImage.image
+        
+    }
 
 }
 
