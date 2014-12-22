@@ -29,10 +29,10 @@ class ViewController: UIViewController {
 //        
 //        for redBalloonNumber in 1...99 {
 //            
-//            myRedBalloon.balloonNumber = redBalloonNumber
-//            myRedBalloon.balloonImage = myRedBalloon.randomBalloon()
+//            currentBalloon.balloonNumber = redBalloonNumber
+//            currentBalloon.balloonImage = myRedBalloon.randomBalloon()
 //            
-//            self.myBalloons.append(myRedBalloon)
+//            self.myBalloons.append(currentBalloon)
 // 
 //        }
   
